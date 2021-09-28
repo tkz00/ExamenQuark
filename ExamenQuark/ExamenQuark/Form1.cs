@@ -16,5 +16,10 @@ namespace ExamenQuark
         {
             InitializeComponent();
         }
+
+        private void btnCotizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
