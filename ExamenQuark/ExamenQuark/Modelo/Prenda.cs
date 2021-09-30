@@ -45,7 +45,7 @@ namespace ExamenQuark.Modelo
         /// <summary>
         /// Constructor de la clase prenda que asigna calidad y stock.
         /// </summary>
-        public Prenda(ECalidad Calidad, int Stock)
+        protected Prenda(ECalidad Calidad, int Stock)
         {
             this.calidad = Calidad;
             this.stock = Stock;
@@ -54,7 +54,7 @@ namespace ExamenQuark.Modelo
         /// <summary>
         /// Constructor que asigna Calidad, stock y precio a la prenda, es sobrecarga del constructor original.
         /// </summary>
-        public Prenda(ECalidad Calidad, int Stock, decimal Precio) : this(Calidad, Stock)
+        protected Prenda(ECalidad Calidad, int Stock, decimal Precio) : this(Calidad, Stock)
         {
             this.precio = Precio;
         }
