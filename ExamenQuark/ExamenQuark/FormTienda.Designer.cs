@@ -320,6 +320,7 @@ namespace ExamenQuark
             this.txtCantidad.Size = new System.Drawing.Size(78, 29);
             this.txtCantidad.TabIndex = 2;
             this.txtCantidad.Text = "1";
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label4
             // 
@@ -339,6 +340,7 @@ namespace ExamenQuark
             this.txtPrecio.Size = new System.Drawing.Size(78, 29);
             this.txtPrecio.TabIndex = 0;
             this.txtPrecio.Text = "100";
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // btnCotizar
             // 

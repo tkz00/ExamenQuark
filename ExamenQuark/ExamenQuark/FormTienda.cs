@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,6 +32,7 @@ namespace ExamenQuark
         {
             this.rbCamisa.Click += new System.EventHandler(this.GetStock_Handler);
             this.rbPantalon.Click += new System.EventHandler(this.GetStock_Handler);
+            this.btnCotizar.Click += new System.EventHandler(this.GetStock_Handler);
 
             Vendedor vendedor = new Vendedor("Theo", "Katz", 109015);
 
@@ -197,6 +199,33 @@ namespace ExamenQuark
         {
             this.lblHistorial.Font = new Font(this.lblHistorial.Font.Name, this.lblHistorial.Font.SizeInPoints, FontStyle.Regular);
             System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default;
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+
+            if (Regex.IsMatch((sender as TextBox).Text, @"\,\d\d"))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
