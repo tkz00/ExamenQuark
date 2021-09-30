@@ -1,7 +1,7 @@
 ﻿
 namespace ExamenQuark
 {
-    partial class Form1
+    partial class FormTienda
     {
         /// <summary>
         /// Required designer variable.
@@ -36,29 +36,29 @@ namespace ExamenQuark
             this.lblVendedor = new System.Windows.Forms.Label();
             this.lblHistorial = new System.Windows.Forms.Label();
             this.gbxPrenda = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cboMao = new System.Windows.Forms.CheckBox();
             this.cboChupin = new System.Windows.Forms.CheckBox();
             this.cboMangaCorta = new System.Windows.Forms.CheckBox();
             this.rbPantalon = new System.Windows.Forms.RadioButton();
             this.rbCamisa = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.gbxCalidad = new System.Windows.Forms.GroupBox();
             this.rbPremium = new System.Windows.Forms.RadioButton();
             this.rbStandard = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btnCotizar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbxPrenda.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbxCalidad.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,7 @@ namespace ExamenQuark
             // lblNombreTienda
             // 
             this.lblNombreTienda.AutoSize = true;
+            this.lblNombreTienda.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNombreTienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreTienda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(45)))), ((int)(((byte)(177)))));
             this.lblNombreTienda.Location = new System.Drawing.Point(12, 98);
@@ -93,19 +94,18 @@ namespace ExamenQuark
             this.lblNombreTienda.Size = new System.Drawing.Size(159, 25);
             this.lblNombreTienda.TabIndex = 1;
             this.lblNombreTienda.Text = "Nombre Tienda";
-            this.lblNombreTienda.UseWaitCursor = true;
             // 
             // lblDireccionTienda
             // 
-            this.lblDireccionTienda.AutoSize = true;
+            this.lblDireccionTienda.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblDireccionTienda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccionTienda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(45)))), ((int)(((byte)(177)))));
-            this.lblDireccionTienda.Location = new System.Drawing.Point(441, 98);
+            this.lblDireccionTienda.Location = new System.Drawing.Point(258, 98);
             this.lblDireccionTienda.Name = "lblDireccionTienda";
-            this.lblDireccionTienda.Size = new System.Drawing.Size(174, 25);
+            this.lblDireccionTienda.Size = new System.Drawing.Size(357, 25);
             this.lblDireccionTienda.TabIndex = 2;
             this.lblDireccionTienda.Text = "Dirección Tienda";
-            this.lblDireccionTienda.UseWaitCursor = true;
+            this.lblDireccionTienda.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblVendedor
             // 
@@ -128,6 +128,9 @@ namespace ExamenQuark
             this.lblHistorial.Size = new System.Drawing.Size(137, 16);
             this.lblHistorial.TabIndex = 4;
             this.lblHistorial.Text = "Historial Cotizaciones";
+            this.lblHistorial.Click += new System.EventHandler(this.lblHistorial_Click);
+            this.lblHistorial.MouseEnter += new System.EventHandler(this.lblHistorial_MouseEnter);
+            this.lblHistorial.MouseLeave += new System.EventHandler(this.lblHistorial_MouseLeave);
             // 
             // gbxPrenda
             // 
@@ -147,15 +150,6 @@ namespace ExamenQuark
             this.gbxPrenda.TabStop = false;
             this.gbxPrenda.Text = "Prenda";
             // 
-            // label6
-            // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 525);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(629, 2);
-            this.label6.TabIndex = 3;
-            // 
             // cboMao
             // 
             this.cboMao.AutoSize = true;
@@ -166,6 +160,7 @@ namespace ExamenQuark
             this.cboMao.TabIndex = 5;
             this.cboMao.Text = "Cuello mao";
             this.cboMao.UseVisualStyleBackColor = true;
+            this.cboMao.CheckedChanged += new System.EventHandler(this.GetStock_Handler);
             // 
             // cboChupin
             // 
@@ -177,6 +172,7 @@ namespace ExamenQuark
             this.cboChupin.TabIndex = 4;
             this.cboChupin.Text = "Chupín";
             this.cboChupin.UseVisualStyleBackColor = true;
+            this.cboChupin.CheckedChanged += new System.EventHandler(this.GetStock_Handler);
             // 
             // cboMangaCorta
             // 
@@ -188,6 +184,7 @@ namespace ExamenQuark
             this.cboMangaCorta.TabIndex = 3;
             this.cboMangaCorta.Text = "Manga corta";
             this.cboMangaCorta.UseVisualStyleBackColor = true;
+            this.cboMangaCorta.CheckedChanged += new System.EventHandler(this.GetStock_Handler);
             // 
             // rbPantalon
             // 
@@ -200,6 +197,8 @@ namespace ExamenQuark
             this.rbPantalon.TabStop = true;
             this.rbPantalon.Text = "Pantalón";
             this.rbPantalon.UseVisualStyleBackColor = true;
+            this.rbPantalon.CheckedChanged += new System.EventHandler(this.GetStock_Handler);
+            this.rbPantalon.Click += new System.EventHandler(this.rbPantalon_CheckedChanged);
             // 
             // rbCamisa
             // 
@@ -212,6 +211,8 @@ namespace ExamenQuark
             this.rbCamisa.TabStop = true;
             this.rbCamisa.Text = "Camisa";
             this.rbCamisa.UseVisualStyleBackColor = true;
+            this.rbCamisa.CheckedChanged += new System.EventHandler(this.GetStock_Handler);
+            this.rbCamisa.Click += new System.EventHandler(this.rbCamisa_CheckedChanged);
             // 
             // label2
             // 
@@ -223,36 +224,45 @@ namespace ExamenQuark
             this.label2.Size = new System.Drawing.Size(588, 2);
             this.label2.TabIndex = 0;
             // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(0, 525);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(629, 2);
+            this.label6.TabIndex = 3;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblStock);
             this.groupBox1.Location = new System.Drawing.Point(17, 351);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(595, 57);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // label3
+            // lblStock
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Unidades de stock disponibles: ___";
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(7, 20);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(306, 24);
+            this.lblStock.TabIndex = 0;
+            this.lblStock.Text = "Unidades de stock disponibles: ___";
             // 
-            // groupBox2
+            // gbxCalidad
             // 
-            this.groupBox2.Controls.Add(this.rbPremium);
-            this.groupBox2.Controls.Add(this.rbStandard);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 436);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(285, 66);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Calidad de Prenda";
+            this.gbxCalidad.Controls.Add(this.rbPremium);
+            this.gbxCalidad.Controls.Add(this.rbStandard);
+            this.gbxCalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxCalidad.Location = new System.Drawing.Point(17, 436);
+            this.gbxCalidad.Name = "gbxCalidad";
+            this.gbxCalidad.Size = new System.Drawing.Size(285, 66);
+            this.gbxCalidad.TabIndex = 7;
+            this.gbxCalidad.TabStop = false;
+            this.gbxCalidad.Text = "Calidad de Prenda";
             // 
             // rbPremium
             // 
@@ -261,13 +271,14 @@ namespace ExamenQuark
             this.rbPremium.Name = "rbPremium";
             this.rbPremium.Size = new System.Drawing.Size(86, 22);
             this.rbPremium.TabIndex = 1;
-            this.rbPremium.TabStop = true;
             this.rbPremium.Text = "Premium";
             this.rbPremium.UseVisualStyleBackColor = true;
+            this.rbPremium.CheckedChanged += new System.EventHandler(this.GetStock_Handler);
             // 
             // rbStandard
             // 
             this.rbStandard.AutoSize = true;
+            this.rbStandard.Checked = true;
             this.rbStandard.Location = new System.Drawing.Point(24, 28);
             this.rbStandard.Name = "rbStandard";
             this.rbStandard.Size = new System.Drawing.Size(85, 22);
@@ -275,13 +286,14 @@ namespace ExamenQuark
             this.rbStandard.TabStop = true;
             this.rbStandard.Text = "Standard";
             this.rbStandard.UseVisualStyleBackColor = true;
+            this.rbStandard.CheckedChanged += new System.EventHandler(this.GetStock_Handler);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtCantidad);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtPrecio);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(327, 436);
             this.groupBox3.Name = "groupBox3";
@@ -300,13 +312,14 @@ namespace ExamenQuark
             this.label5.TabIndex = 3;
             this.label5.Text = "Cantidad";
             // 
-            // textBox2
+            // txtCantidad
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(196, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(78, 29);
-            this.textBox2.TabIndex = 2;
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(196, 24);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(78, 29);
+            this.txtCantidad.TabIndex = 2;
+            this.txtCantidad.Text = "1";
             // 
             // label4
             // 
@@ -318,13 +331,14 @@ namespace ExamenQuark
             this.label4.TabIndex = 1;
             this.label4.Text = "$";
             // 
-            // textBox1
+            // txtPrecio
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(32, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(78, 29);
-            this.textBox1.TabIndex = 0;
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(32, 24);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(78, 29);
+            this.txtPrecio.TabIndex = 0;
+            this.txtPrecio.Text = "100";
             // 
             // btnCotizar
             // 
@@ -340,27 +354,27 @@ namespace ExamenQuark
             this.btnCotizar.UseVisualStyleBackColor = false;
             this.btnCotizar.Click += new System.EventHandler(this.btnCotizar_Click);
             // 
-            // label7
+            // lblResultado
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(98)))), ((int)(((byte)(220)))));
-            this.label7.Location = new System.Drawing.Point(322, 561);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(292, 25);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "$ ____________________";
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(98)))), ((int)(((byte)(220)))));
+            this.lblResultado.Location = new System.Drawing.Point(322, 561);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(263, 25);
+            this.lblResultado.TabIndex = 10;
+            this.lblResultado.Text = "$                                  ";
             // 
-            // Form1
+            // FormTienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 625);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnCotizar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbxCalidad);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbxPrenda);
             this.Controls.Add(this.lblHistorial);
@@ -368,16 +382,18 @@ namespace ExamenQuark
             this.Controls.Add(this.lblDireccionTienda);
             this.Controls.Add(this.lblNombreTienda);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "FormTienda";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gbxPrenda.ResumeLayout(false);
             this.gbxPrenda.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbxCalidad.ResumeLayout(false);
+            this.gbxCalidad.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -401,18 +417,18 @@ namespace ExamenQuark
         private System.Windows.Forms.RadioButton rbCamisa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.GroupBox gbxCalidad;
         private System.Windows.Forms.RadioButton rbPremium;
         private System.Windows.Forms.RadioButton rbStandard;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCotizar;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblResultado;
     }
 }
 

@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\bin\Debug\ExamenQuark.exe.config
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\bin\Debug\ExamenQuark.exe
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\bin\Debug\ExamenQuark.pdb
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\obj\Debug\ExamenQuark.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\obj\Debug\ExamenQuark.Properties.Resources.resources
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\obj\Debug\ExamenQuark.csproj.GenerateResource.cache
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\obj\Debug\ExamenQuark.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\obj\Debug\ExamenQuark.exe
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\obj\Debug\ExamenQuark.pdb
+C:\Users\user\Desktop\ExamenQuark\ExamenQuark\ExamenQuark\obj\Debug\ExamenQuark.FormTienda.resources
